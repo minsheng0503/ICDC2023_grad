@@ -1,0 +1,78 @@
+Command: vcs tb.sv LASER.v -full64 -debug_access+all +v2k -sverilog -R -l run.log \
+
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+         Version Q-2020.03_Full64 -- Thu May 11 21:37:11 2023
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'tb.sv'
+Parsing design file 'LASER.v'
+Top Level Modules:
+       testfixture
+TimeScale is 1 ns / 10 ps
+Starting vcs inline pass...
+
+1 module and 0 UDP read.
+recompiling module testfixture
+make[1]: Entering directory `/home/jechen/110521168/IC_Contest/2023grad/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv    -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/usr/cad/synopsys/vcs/cur/linux64/lib -L/usr/cad/synopsys/vcs/cur/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _11162_archive_1.so \
+SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive -lvcsucli -Wl,-no-whole-archive        _vcs_pli_stub_.o   /usr/cad/synopsys/vcs/cur/linux64/lib/vcs_save_restore_new.o \
+/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl \
+
+../simv up to date
+make[1]: Leaving directory `/home/jechen/110521168/IC_Contest/2023grad/csrc'
+Command: /home/jechen/110521168/IC_Contest/2023grad/./simv +v2k -a run.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03_Full64; Runtime version Q-2020.03_Full64;  May 11 21:37 2023
+*******************************
+** Simulation Start          **
+*******************************
+== PATTERN img1.pattern
+---- Used Cycle:       9964
+---- Get Return: C1(11,11),C2( 4,10)
+---- cover =  30, optimum =  30
+== PATTERN img2.pattern
+---- Used Cycle:      10995
+---- Get Return: C1( 5,11),C2(11, 6)
+---- cover =  28, optimum =  28
+== PATTERN img3.pattern
+---- Used Cycle:       8933
+---- Get Return: C1( 6, 9),C2(10, 5)
+---- cover =  29, optimum =  29
+== PATTERN img4.pattern
+---- Used Cycle:       9964
+---- Get Return: C1( 5, 6),C2(10, 5)
+---- cover =  30, optimum =  30
+== PATTERN img5.pattern
+---- Used Cycle:       9964
+---- Get Return: C1( 2,10),C2( 8,12)
+---- cover =  23, optimum =  23
+== PATTERN img6.pattern
+---- Used Cycle:      10995
+---- Get Return: C1(10, 7),C2(13, 2)
+---- cover =  30, optimum =  30
+
+*******************************
+**   Finish Simulation       **
+**   RUN CYCLE =      61070  **
+**   Cover total = 170/170   **
+*******************************
+$finish called from file "tb.sv", line 254.
+$finish at simulation time             48855600
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 488556000 ps
+CPU Time:      0.310 seconds;       Data structure size:   0.1Mb
+Thu May 11 21:37:15 2023
+CPU time: .398 seconds to compile + .262 seconds to elab + .233 seconds to link + .331 seconds in simulation
